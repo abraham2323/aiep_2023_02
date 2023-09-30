@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repost\\Pro401\\Pro401\\Pro401.csproj": {}
+    "C:\\Users\\Abrah\\Source\\Repos\\abraham2323\\aiep_2023_02\\Pro401\\Pro401.csproj": {}
   },
   "projects": {
-    "C:\\Repost\\Pro401\\Pro401\\Pro401.csproj": {
+    "C:\\Users\\Abrah\\Source\\Repos\\abraham2323\\aiep_2023_02\\Pro401\\Pro401.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repost\\Pro401\\Pro401\\Pro401.csproj",
+        "projectUniqueName": "C:\\Users\\Abrah\\Source\\Repos\\abraham2323\\aiep_2023_02\\Pro401\\Pro401.csproj",
         "projectName": "Pro401",
-        "projectPath": "C:\\Repost\\Pro401\\Pro401\\Pro401.csproj",
-        "packagesPath": "C:\\Users\\fcerd\\.nuget\\packages\\",
-        "outputPath": "C:\\Repost\\Pro401\\Pro401\\obj\\",
+        "projectPath": "C:\\Users\\Abrah\\Source\\Repos\\abraham2323\\aiep_2023_02\\Pro401\\Pro401.csproj",
+        "packagesPath": "C:\\Users\\Abrah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Abrah\\Source\\Repos\\abraham2323\\aiep_2023_02\\Pro401\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\fcerd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abrah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
