@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pro401.DTO.VehiculoDTO;
@@ -11,24 +12,30 @@ namespace Pro401.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class VehiculoController : ControllerBase
     {
         
         private readonly IVehiculoService _vehiculoService;
         private readonly IMapper _mapper;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public VehiculoController(IVehiculoService vehiculoService, IMapper mapper)
+        public VehiculoController(IVehiculoService vehiculoService, IMapper mapper, UserManager<IdentityUser> userManager)
         {
-            
             _vehiculoService = vehiculoService;
             _mapper = mapper;
+            _userManager = userManager;
         }
 
         [HttpGet]
         
-        public ActionResult Get()
+        public async Task<ActionResult> Get()
         {
+            var emailClaim = HttpContext.User.Claims.Where(claim=>claim.Type == "email").FirstOrDefault();
+            var email = emailClaim != null ? emailClaim.Value : null;
+            if (email != null)
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+            }
             return Ok("HTTP GET");
         }
 
@@ -61,19 +68,23 @@ namespace Pro401.Controllers
         }
 
         [HttpPut]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult Put()
         {
             return Ok("HTTP PUT");
         }
 
         [HttpPatch]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult Patch()
         {
             return Ok("HTTP PATCH");
         }
 
         [HttpDelete]
-        public ActionResult Delate()
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "isAdminClaim")]
+
+        public ActionResult Delete()
         {
             return Ok("HTTP Delate");
         }

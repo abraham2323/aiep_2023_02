@@ -58,7 +58,8 @@ namespace Pro401.Controllers
             var claims = new List<Claim>()
             {
                 new Claim("email",userCredentials.Email),
-                new Claim("otra informacion", "lo que yo quiera")
+                new Claim("otra informacion", "lo que yo quiera"),
+                //new Claim("isAdmin","1")
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["jwtkey"]));
