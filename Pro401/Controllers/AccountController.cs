@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Pro401.DTO.AccountDTO;
@@ -51,6 +53,18 @@ namespace Pro401.Controllers
             {
                 return BadRequest("Login Incorrecto");
             }
+        }
+
+        [HttpGet("user")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public ActionResult User()
+        {
+            var response = new UserInfo();
+            var emailClaim = HttpContext.User.Claims.Where(claim => claim.Type == "email").FirstOrDefault();
+            var email = emailClaim.Value;
+            response.Email = email;
+            response.Ok = true;
+            return Ok(response);
         }
 
         private AuthenticationResponse BuildToken(UserCredentials userCredentials)
