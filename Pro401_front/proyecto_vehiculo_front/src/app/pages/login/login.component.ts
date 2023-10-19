@@ -33,6 +33,11 @@ export class LoginComponent  implements OnInit {
     this.router.navigate(['/registro']);
   }
 
+  toMenu(){
+    console.log("toMenu");
+    this.router.navigate(['/menu']);
+  }
+
   submitLoginForm(){
     console.log("Submit");
     this.accountService.loginUser(this.loginForm.value).subscribe({
@@ -53,5 +58,4 @@ export class LoginComponent  implements OnInit {
       }
     });
   }
-
 }
