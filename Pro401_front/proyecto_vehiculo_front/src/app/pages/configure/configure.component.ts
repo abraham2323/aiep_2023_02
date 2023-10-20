@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigureComponent  implements OnInit {
 
-  constructor() { }
+  brillo: number = 50;
+
+  actualizarBrillo() {
+    // Aquí puedes realizar acciones relacionadas con el brillo, como ajustar la pantalla.
+    console.log('Brillo actualizado:', this.brillo);
+  }
 
   ngOnInit() {}
 
