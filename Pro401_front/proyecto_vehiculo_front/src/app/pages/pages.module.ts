@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ListQuestionnaireComponent } from './list-questionnaire/list-questionnaire.component';
 import { QrComponent } from './qr/qr.component';
 import { ConfigureComponent } from './configure/configure.component';
+import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     ListQuestionnaireComponent,
     QrComponent,
-    ConfigureComponent
+    ConfigureComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     IonicModule,

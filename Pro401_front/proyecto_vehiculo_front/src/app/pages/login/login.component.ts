@@ -37,6 +37,10 @@ export class LoginComponent  implements OnInit {
     console.log("toMenu");
     this.router.navigate(['/menu']);
   }
+  toRecoverPassword(){
+    console.log("toRecoverPassword");
+    this.router.navigate(['/recover-password']);
+  }
 
   submitLoginForm(){
     console.log("Submit");

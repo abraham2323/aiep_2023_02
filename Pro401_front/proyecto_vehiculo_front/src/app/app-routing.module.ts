@@ -7,6 +7,7 @@ import { UserGuard } from './guards/user.guard';
 import { ListQuestionnaireComponent } from './pages/list-questionnaire/list-questionnaire.component';
 import { QrComponent } from './pages/qr/qr.component';
 import { ConfigureComponent } from './pages/configure/configure.component';
+import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'Configure',
     component: ConfigureComponent
+  },
+  {
+    path: 'recover-password',
+    component: RecoverPasswordComponent 
   }
 
 ];
